@@ -107,6 +107,8 @@ gulp.task('nodemon', function (cb) {
   return nodemon({
 		script: 'server.js'
 	}).on('start', function () {
+		// to avoid nodemon being started multiple times
+		// thanks @matthisk
 		if (!started) {
 			cb();
 			started = true;
@@ -115,15 +117,20 @@ gulp.task('nodemon', function (cb) {
 });
 
 gulp.task("serve", ['nodemon'], function () {
-  browserSync.init({
-    server:{
-      baseDir:config.dist,
-      proxy: "http://localhost:5000",
+  // browserSync.init({
+  //   server:{
+  //     baseDir:config.dist,
+  //     proxy: "http://localhost:5000",
+  //       files: ["public/**/*.*"],
+  //       browser: "google chrome",
+  //       port: 7000
+  //   }
+  // });
+  browserSync.init(null, {
+		proxy: "http://localhost:5000",
         files: ["public/**/*.*"],
-        browser: "google chrome",
-        port: 7000
-    }
-  });
+        port: 7000,
+	});
   gulp.watch(sources.html,['html-watch']);
   gulp.watch("./src/assets/scss/*.scss",['css-watch']);
   gulp.watch("./src/assets/js/*.js",['js-watch']);
