@@ -28,7 +28,9 @@ const content = (titleNews, briefNews, urlImg, classContainer)=>{
 
 $.get("/api/news/", (response, status)=>{
   $.each(response, (i, data)=>{
+    console.log(response);
     $.each(data.categories, (i, categorie)=>{
+      console.log(categorie);
       if(categorie == 0){
         const aNews = new Noticia(data.title, data.brief, data.img, 'col-xs-12 col-sm-12 has-feedback');
         newsState.top.push(aNews);
@@ -41,7 +43,7 @@ const sectionTopNews = (update)=>{
   let topNews = $('<section class="container-fluid top"></section>');
   let row = $('<section class="row"></div>');
 
-  console.log(newsState);
+  // console.log(newsState);
 
   $.each(newsState, (i, noticia)=>{
     console.log('newsState-tip');
