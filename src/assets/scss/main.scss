@@ -1,1 +1,12 @@
 @import "bootstrap";
+
+.p-abs{
+  position: absolute;
+}
+
+.top{
+  & .top__content{
+    left: 3rem;
+    bottom: 0rem;
+  }
+}

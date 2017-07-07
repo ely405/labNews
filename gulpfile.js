@@ -58,10 +58,15 @@ gulp.task('js', function() {
                   sources.assets + paths.libs + 'bootstrap-sass/assets/javascripts/bootstrap.js',
                   sources.rootJs + '*/header.js',
                   sources.rootJs + '*/top-news.js',
+                  sources.rootJs + '*/world-news.js',
+                  sources.rootJs + '*/education-news.js',
+                  sources.rootJs + '*/opinion-news.js',
+                  sources.rootJs + '*/carousel.js',
+                  sources.rootJs + '*/footer.js',
                   sources.rootJs+'index.js'])
-  .pipe(jshint())
-  .pipe(jshint.reporter('default'))
-  .pipe(notify({ message: 'JSHints task complete' }))
+  // .pipe(jshint())
+  // .pipe(jshint.reporter('default'))
+  // .pipe(notify({ message: 'JSHints task complete' }))
     .pipe(babel({presets: 'es2015'}))
     .pipe(concat('bundle.js'))
     .pipe(rename({suffix: '.min'}))
@@ -107,8 +112,6 @@ gulp.task('nodemon', function (cb) {
   return nodemon({
 		script: 'server.js'
 	}).on('start', function () {
-		// to avoid nodemon being started multiple times
-		// thanks @matthisk
 		if (!started) {
 			cb();
 			started = true;
@@ -117,15 +120,6 @@ gulp.task('nodemon', function (cb) {
 });
 
 gulp.task("serve", ['nodemon'], function () {
-  // browserSync.init({
-  //   server:{
-  //     baseDir:config.dist,
-  //     proxy: "http://localhost:5000",
-  //       files: ["public/**/*.*"],
-  //       browser: "google chrome",
-  //       port: 7000
-  //   }
-  // });
   browserSync.init(null, {
 		proxy: "http://localhost:5000",
         files: ["public/**/*.*"],
