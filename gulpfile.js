@@ -25,7 +25,7 @@ const paths = {
   mainScss: 'scss/*.scss',
   mainJs: 'js/',
   libs: 'libs/',
-  img: 'img/**/*.*'
+  img: 'img/'
 };
 
 var sources = {
@@ -58,6 +58,7 @@ gulp.task('js', function() {
                   sources.assets + paths.libs + 'bootstrap-sass/assets/javascripts/bootstrap.js',
                   sources.rootJs + '*/header.js',
                   sources.rootJs + '*/top-news.js',
+                  sources.rootJs + '*/tech-news.js',
                   sources.rootJs + '*/world-news.js',
                   sources.rootJs + '*/education-news.js',
                   sources.rootJs + '*/opinion-news.js',
@@ -80,7 +81,7 @@ gulp.task('html',()=>{
 });
 
 gulp.task("img", function(){
-  gulp.src(sources.rootImg).pipe(gulp.dest(config.dist + paths.assets + 'img')).pipe(notify({ message: 'img task complete' }));
+  gulp.src(sources.rootImg + '**/*.png').pipe(gulp.dest(config.dist + paths.assets + 'img')).pipe(notify({ message: 'img task complete' }));
 });
 
 gulp.task('clean', function(cb) {
