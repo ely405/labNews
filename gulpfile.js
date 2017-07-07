@@ -8,6 +8,7 @@ const merge = require('merge-stream');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
+const nodemon = require('gulp-nodemon');
 const notify = require('gulp-notify');
 const clean = require('del');
 
@@ -54,6 +55,7 @@ gulp.task("css", ()=>{
 
 gulp.task('js', function() {
   return gulp.src([sources.assets + paths.libs + 'jquery/dist/jquery.js',
+                  sources.assets + paths.libs + 'bootstrap-sass/assets/javascripts/bootstrap.js',
                   sources.rootJs + '*/header.js',
                   sources.rootJs + '*/top-news.js',
                   sources.rootJs+'index.js'])
@@ -100,10 +102,26 @@ gulp.task("html-watch",["html"],function(done){
   done();
 });
 
-gulp.task("serve", function () {
+gulp.task('nodemon', function (cb) {
+  var started = false;
+  return nodemon({
+		script: 'server.js'
+	}).on('start', function () {
+		if (!started) {
+			cb();
+			started = true;
+		}
+	});
+});
+
+gulp.task("serve", ['nodemon'], function () {
   browserSync.init({
     server:{
-      baseDir:config.dist
+      baseDir:config.dist,
+      proxy: "http://localhost:5000",
+        files: ["public/**/*.*"],
+        browser: "google chrome",
+        port: 7000
     }
   });
   gulp.watch(sources.html,['html-watch']);
