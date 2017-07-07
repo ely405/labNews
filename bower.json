@@ -1,0 +1,28 @@
+{
+  "name": "lab-news",
+  "description": "Laboratoria news.",
+  "main": "server.js",
+  "authors": [
+    "Ely405"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "jquery",
+    "sass",
+    "gulp",
+    "bower"
+  ],
+  "homepage": "https://github.com/ely405/labNews",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/assets/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.7"
+  }
+}
