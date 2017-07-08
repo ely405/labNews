@@ -9,6 +9,8 @@
   height: 100%;
 }
 
+
+//sectioon top newa
 .top{
   & .top__content{
     height: 40rem;
@@ -25,5 +27,50 @@
     & .top__content--short{
       height: 20rem;
     }
+  }
+}
+
+//section wolrd news
+.first-row-world{
+  height: 40rem;
+  & .first-row-world__col{
+    height: 100%;
+    & .col-rigth-content, & .col-left-content{
+      height: 100%;
+    }
+    & .col-mid-content-50{
+      height: 50%;
+    }
+    @media (max-width: 767px){
+      & .col-mid-content-50{
+        height: 33%;
+      }
+    }
+    & .col-mid-content-25{
+      height: 25%;
+    }
+  }
+}
+
+.sec-row-world{
+  height: 10rem;
+  & .sec-row-world__content{
+    height: 100%;
+  }
+}
+
+
+//section tech
+
+.tech-col{
+  height: 40rem;
+  & .tech-col__left{
+    height: 100%;
+  }
+  & .tech-col__right--50{
+    height: 50%;
+  }
+  & .tech-col__right--25{
+    height: 25%;
   }
 }
