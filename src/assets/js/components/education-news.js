@@ -5,7 +5,7 @@ const educationNews = [];
 const sectioneducationNews = (update)=>{
   let educationNews = $('<section class="container-fluid top"></section>');
   let sectionTitle = $('<h1>EDUCACIÓN</h1>');
-  let firstRow = $('<section class="row"></div>');
+  let firstRow = $('<section class="row first-row-ed"></div>');
   let secondRow = $('<section class="row"></div>');
 
 
@@ -22,17 +22,17 @@ const sectioneducationNews = (update)=>{
     });
 
     let item1 = content(educationNews[2].title, educationNews[2].brief, 'assets/img/' + educationNews[2].url);
-    item1.addClass('main-new col-xs-12 col-sm-3 has-feedback');
+    item1.addClass('col-xs-12 col-sm-3 has-feedback first-row-ed__content');
     let item2 = content(educationNews[3].title, educationNews[3].brief, 'assets/img/' + educationNews[3].url);
-    item2.addClass('col-xs-12 col-sm-3 has-feedback');
+    item2.addClass('col-xs-12 col-sm-3 has-feedback first-row-ed__content');
     let item3 = content(educationNews[4].title, educationNews[4].brief, 'assets/img/' + educationNews[4].url);
-    item3.addClass('col-xs-12 col-sm-3 has-feedback');
+    item3.addClass('col-xs-12 col-sm-3 has-feedback first-row-ed__content h-50-xs');
     let item4 = content(educationNews[5].title, educationNews[5].brief, 'assets/img/' + educationNews[5].url);
-    item4.addClass('col-xs-12 col-sm-3 has-feedback');
+    item4.addClass('col-xs-12 col-sm-3 has-feedback first-row-ed__content h-50-xs');
     let item5 = content(educationNews[6].title, educationNews[6].brief, 'assets/img/' + educationNews[6].url);
     item5.addClass('col-xs-12 col-sm-6 has-feedback');
     let item6 = content(educationNews[7].title, educationNews[7].brief, 'assets/img/' + educationNews[7].url);
-    item6.addClass('col-xs-12 col-sm-6 has-feedback');
+    item6.addClass('col-xs-12 col-sm-6 has-feedback hidden-xs');
     firstRow.append(item1, item2, item3, item4);
     secondRow.append(item5, item6)
     console.log(educationNews);

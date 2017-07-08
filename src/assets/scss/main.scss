@@ -74,3 +74,17 @@
     height: 25%;
   }
 }
+
+//section education
+
+.first-row-ed{
+  height: 25rem;
+  & .first-row-ed__content{
+    height: 100%;
+    @media (max-width: 767px){
+      &.h-50-xs{
+        height: 50%;
+      }
+    }
+  }
+}
