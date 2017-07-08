@@ -11,7 +11,7 @@ const topNew = [];
 const content = (titleNews, briefNews, urlImg)=>{
   let container = $('<section"></section>');
   let img = $('<img src="'+urlImg+'" alt="" class="img-responsive">');
-  let containDescription = $('<div class="content col-xs-12"></div>');
+  let containDescription = $('<div class="content"></div>');
   let title = $('<h6>'+titleNews+'</h6>');
   let brief = $('<p class="hidden-xs">'+briefNews+'</p>');
 
