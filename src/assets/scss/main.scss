@@ -26,10 +26,12 @@
         color: white;
       }
     }
-  }
-  & .content{
-    left: 3rem;
-    bottom: 0rem;
+    &.main-new .content{
+      left: 3rem;
+      bottom: 3rem;
+      background-color: transparent;
+      position: absolute;
+    }
   }
 }
 
