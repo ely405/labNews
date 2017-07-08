@@ -24,7 +24,7 @@ const sectionWorldNews = (update)=>{
     });
     // console.log(worldNews);
 
-    let item1 = content(worldNews[0].title, worldNews[0].brief, 'assets/img/' + worldNews[0].url);
+    let item1 = content(worldNews[9].title, worldNews[9].brief, 'assets/img/' + worldNews[9].url);
     item1.addClass('main-new col-xs-12 has-feedback col-left-content');
     colLeft.append(item1);
     let item2 = content(worldNews[1].title, worldNews[1].brief, 'assets/img/' + worldNews[1].url);
@@ -39,7 +39,7 @@ const sectionWorldNews = (update)=>{
     let item6 = content(worldNews[5].title, worldNews[5].brief, 'assets/img/' + worldNews[5].url);
     item6.addClass('col-xs-12 col-sm-12 has-feedback col-rigth-content hidden-xs');
     colRight.append(item6);
-    let item7 = content(worldNews[6].title, worldNews[6].brief, 'assets/img/' + worldNews[6].url);
+    let item7 = content(worldNews[3].title, worldNews[2].brief, 'assets/img/' + worldNews[2].url);
     item7.addClass('col-xs-12 col-sm-3 has-feedback sec-row-world__content hidden-xs');
     let item8 = content(worldNews[7].title, worldNews[7].brief, 'assets/img/' + worldNews[7].url);
     item8.addClass('col-xs-12 col-sm-3 has-feedback sec-row-world__content hidden-xs');

@@ -1,7 +1,7 @@
 'use strict';
 
 const render = (root) => {
-  const wrapper = $('<div class="wrapper"></div>');
+    const wrapper = $('<div class="wrapper"></div>');
 //
   wrapper.append(sectionTopNews(_=>{render(root)}));
   wrapper.append(sectionWorldNews(_=>{render(root)}));

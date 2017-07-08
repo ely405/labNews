@@ -1,8 +1,13 @@
 @import "bootstrap";
 
-.p-abs{
-  position: absolute;
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
 }
+
+// .p-abs{
+//   position: absolute;
+// }
 
 .img-responsive{
   width: 100%;
@@ -14,6 +19,9 @@
 .top{
   & .top__content{
     height: 40rem;
+    &.flex{
+      @include flex(column);
+    }
   }
   & .content{
     left: 3rem;
