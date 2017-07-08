@@ -12,7 +12,7 @@ const sectionWorldNews = (update)=>{
   let colRight = $('<div class="col-sm-3"></div>');
 
   $.get("/api/news/", (response, status)=>{
-    // console.log(response);
+    console.log(response);
     $.each(response, (i, data)=>{
       $.each(data.categories, (i, categorie)=>{
         if(categorie == 1){

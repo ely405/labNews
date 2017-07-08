@@ -6,11 +6,24 @@
 
 .img-responsive{
   width: 100%;
+  height: 100%;
 }
 
 .top{
   & .top__content{
+    height: 40rem;
+  }
+  & .content{
     left: 3rem;
     bottom: 0rem;
+  }
+}
+
+
+@media (max-width: 767px){
+  .top{
+    & .top__content--short{
+      height: 20rem;
+    }
   }
 }

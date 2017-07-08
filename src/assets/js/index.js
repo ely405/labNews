@@ -7,6 +7,8 @@ const render = (root) => {
   wrapper.append(sectionTopNews(_=>{render(root)}));
   wrapper.append(sectionWorldNews(_=>{render(root)}));
   wrapper.append(sectionTechNews(_=>{render(root)}));
+  wrapper.append(sectioneducationNews(_=>{render(root)}));
+  wrapper.append(sectionopinionNews(_=>{render(root)}));
   root.append(wrapper);
 }
 
@@ -15,7 +17,7 @@ $(_ => {
   console.log(root);
   render(root);
 
-  $.get('/api/categories/2', (response)=>{
+  $.get('/api/categories/4', (response)=>{
     console.log(response);
   })
 });

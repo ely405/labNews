@@ -1,5 +1,3 @@
-console.log('hola');
-
 'use strict';
 
 const techNews = [];
@@ -24,7 +22,7 @@ const sectionTechNews = (update)=>{
       });
     });
 
-    let item1 = content(techNews[0].title, techNews[0].brief, 'assets/img/' + techNews[0].url);
+    let item1 = content(techNews[5].title, techNews[5].brief, 'assets/img/' + techNews[5].url);
     item1.addClass('main-new col-xs-12 has-feedback');
     colLeft.append(item1);
     let item2 = content(techNews[1].title, techNews[1].brief, 'assets/img/' + techNews[1].url);
@@ -36,9 +34,8 @@ const sectionTechNews = (update)=>{
     let item5 = content(techNews[4].title, techNews[4].brief, 'assets/img/' + techNews[4].url);
     item5.addClass('col-xs-12 has-feedback');
     colRight.append(item2, item3, item4, item5);
-
-    console.log(techNews);
+    row.append(colLeft, colRight);
   });
 
-  return techNews.append(sectionTitle, colLeft, colRight);
+  return techNews.append(sectionTitle, row);
 }
