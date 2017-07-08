@@ -88,3 +88,17 @@
     }
   }
 }
+
+//opinion section
+
+.opinion-row{
+  height: 30rem;
+  & .opinion-row__content{
+    height: 100%;
+    @media (max-width: 767px){
+      &.h-50-xs{
+        height: 50%;
+      }
+    }
+  }
+}
