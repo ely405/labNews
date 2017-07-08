@@ -65,9 +65,9 @@ gulp.task('js', function() {
                   sources.rootJs + '*/carousel.js',
                   sources.rootJs + '*/footer.js',
                   sources.rootJs+'index.js'])
-  // .pipe(jshint())
-  // .pipe(jshint.reporter('default'))
-  // .pipe(notify({ message: 'JSHints task complete' }))
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'))
+  .pipe(notify({ message: 'JSHints task complete' }))
     .pipe(babel({presets: 'es2015'}))
     .pipe(concat('bundle.js'))
     .pipe(rename({suffix: '.min'}))
